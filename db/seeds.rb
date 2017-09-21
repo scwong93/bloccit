@@ -1,5 +1,14 @@
 require 'random_data'
 
+
+15.times do
+  Topic.create!(
+    name:         RandomData.random_sentence,
+    description:  RandomData.random_paragraph
+  )
+end
+topics = Topic.all
+
 50.times do
   Post.create!(
     title:  RandomData.random_sentence,

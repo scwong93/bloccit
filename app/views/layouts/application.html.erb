@@ -14,7 +14,10 @@
       <li><%= link_to "Topics", topics_path %></li>
       <li><%= link_to "About", about_path %></li>
       <% if current_user %>
-         <li class="pull-right"><%= link_to "#{current_user.name} -Sign Out", session_path(current_user), method: :delete %></li>
+        <% image_tag avatar_url(current_user), class: :gravatar %>
+        <div class="pull-right">
+            <%= current_user.name %> <br> <%= link_to "Sign Out", session_path(current_user), method: :delete %></li>
+        </div>
       <% else %>
          <li class="pull-right"><%= link_to "Sign In", new_session_path %></li>
          <li class="pull-right"><%= link_to "Sign Up", new_user_path %></li>

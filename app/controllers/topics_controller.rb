@@ -67,4 +67,8 @@ class TopicsController < ApplicationController
        redirect_to topics_path
      end
    end
+
+   def moderator_status
+     current_user.moderator?
+   end
 end

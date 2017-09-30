@@ -67,4 +67,8 @@ class PostsController < ApplicationController
        redirect_to [post.topic, post]
      end
    end
+
+   def moderator_status
+     current_user.moderator?
+   end
 end

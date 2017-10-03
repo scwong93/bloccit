@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :advertisements
 
+  resources :favorites, only: [:create, :destroy]
+
   resources :topics do
      resources :posts, except: [:index]
      resources :sponsoredposts

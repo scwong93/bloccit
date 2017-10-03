@@ -9,6 +9,7 @@
   <div class="col-md-8">
     <p class="lead"><%= @topic.description %></p>
     <% @topic.posts.each do |post| %>
+      <%= render partial: 'votes/voting', locals: { post: post } %>
       <%= render partial: 'posts/post', locals: { post: post }
     <% end %>
   </div>

@@ -16,8 +16,10 @@
       <% if current_user %>
         <% image_tag avatar_url(current_user), class: :gravatar %>
         <div class="pull-right">
-            <%= current_user.name %> <br> <%= link_to "Sign Out", session_path(current_user), method: :delete %></li>
-        </div>
+            <li class="pull-right"><%= link_to "Sign Out", session_path(current_user), method: :delete %></li>
+            <li class="pull-right"><%= image_tag current_user.avatar_url(48) %></li>
+            <li class="pull-right"><%= link_to current_user.name, user_path(current_user) %></li>
+         </div>
       <% else %>
          <li class="pull-right"><%= link_to "Sign In", new_session_path %></li>
          <li class="pull-right"><%= link_to "Sign Up", new_user_path %></li>

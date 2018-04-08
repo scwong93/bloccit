@@ -14,7 +14,6 @@
       <li><%= link_to "Topics", topics_path %></li>
       <li><%= link_to "About", about_path %></li>
       <% if current_user %>
-        <% image_tag current_user.avatar_url, class: :gravatar %>
         <div class="pull-right">
             <li class="pull-right"><%= link_to "Sign Out", session_path(current_user), method: :delete %></li>
             <li class="pull-right"><%= image_tag current_user.avatar_url(48) %></li>
